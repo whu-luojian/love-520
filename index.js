@@ -84,7 +84,7 @@ javascript: !(function () {
             b = imgData.data[position + 2],
             a = imgData.data[position + 3];
 
-          if (r === 255) continue;
+          if (r + g + b === 0) continue;
 
           var p = {};
 

@@ -10,8 +10,8 @@ javascript: !(function () {
   document.body.appendChild(canvas);
 
   canvas.style.position = "fixed";
-  canvas.style.left = "0";
-  canvas.style.top = "0";
+  // canvas.style.left = "0";
+  // canvas.style.top = "0";
   canvas.style.zIndex = -1;
 
   var context = canvas.getContext("2d");
@@ -32,7 +32,7 @@ javascript: !(function () {
 
   window.addEventListener("resize", resizeCanvas);
 
-  const texts = ["老婆", "我爱你", "5201314"];
+  const texts = ["老婆", "我爱你", "520 1314"];
   let i = 0;
   function mouseDownHandler(e) {
     var x = e.clientX;
@@ -61,7 +61,7 @@ javascript: !(function () {
     }
 
     if (text !== "") {
-      var gap = 15;
+      var gap = 5;
       var fontSize = 120;
 
       textctx.font = fontSize + "px " + font;

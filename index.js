@@ -61,7 +61,7 @@ javascript: !(function () {
     }
 
     if (text !== "") {
-      var gap = 12;
+      var gap = 6;
       var fontSize = 120;
 
       textctx.font = fontSize + "px " + font;

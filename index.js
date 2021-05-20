@@ -11,7 +11,7 @@ javascript: !(function () {
 
   canvas.style.position = "fixed";
   canvas.style.left = "0";
-  canvas.style.top = "100";
+  canvas.style.top = "0";
   canvas.style.zIndex = -1;
 
   var context = canvas.getContext("2d");

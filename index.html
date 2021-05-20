@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>🎉✨💖love-520💖✨🎉</title>
-  <style>
-    html, body {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-<!--   <canvas id="canvas"></canvas> -->
-  <script type="text/javascript" src="index.js"></script>
-<!--   <script>
-    var ctx = document.getElementById('canvas').getContext('2d');
-      ctx.font = "48px serif";
-      ctx.fillText("520 1314", 10, 50);
-  </script> -->
+  <script>
+    var canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
+
+    canvas.style.position = "fixed";
+    canvas.style.left = "0";
+    canvas.style.top = "0";
+    canvas.style.zIndex = -1;
+
+    var context = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      clearCanvas();
+    }
+
+    function clearCanvas() {
+      context.fillStyle = "#000000";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    resizeCanvas();
+
+    var text = '520 我爱你'
+    var fontSize = 120;
+    var textHeight = fontSize;
+    context.font = fontSize + "px serif";
+    context.fillStyle = "#ffffff";
+    context.fillText(text, 0, textHeight);
+
+    var textWidth = context.measureText(text).width;
+
+    var imgData = context.getImageData(0, 0, textWidth, textHeight);
+    var gap = 6
+    var x = 400
+    var y = 200
+    for (var h = 0; h < textHeight; h += gap) {
+      for (var w = 0; w < textWidth; w += gap) {
+        var position = (textWidth * h + w) * 4;
+        var r = imgData.data[position], g = imgData.data[position + 1], b = imgData.data[position + 2], a = imgData.data[position + 3];
+        if(r+g+b==0)continue;
+        var fx = x + w - textWidth/2;
+        var fy = y + h - textHeight/2;
+
+        context.fillStyle = "#ffffff";
+        context.fillRect(fx,fy,1,1);
+      }
+    }
+  </script>
 </body>
+
 </html>

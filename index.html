@@ -35,8 +35,8 @@
 
     resizeCanvas();
 
-    var text = '5'
-    var fontSize = 12;
+    var text = '520 爱你'
+    var fontSize = 100;
     var textHeight = fontSize;
     context.font = fontSize + "px serif";
     context.fillStyle = "#ffffff";
@@ -52,7 +52,7 @@
       for (var w = 0; w < textWidth; w += gap) {
         var position = (textWidth * h + w) * 4;
         var r = imgData.data[position], g = imgData.data[position + 1], b = imgData.data[position + 2], a = imgData.data[position + 3];
-        if (r + g + b == 0) continue;
+        if (r < 200) continue;
         var fx = x + w - textWidth / 2;
         var fy = y + h - textHeight / 2;
 
@@ -64,7 +64,7 @@
     var color = document.getElementById('color');
     var text = document.getElementById('text');
 
-    text.textContent = JSON.stringify(imgData);
+    // text.textContent = JSON.stringify(imgData);
 
     function pick(event) {
       // 获取鼠标坐标

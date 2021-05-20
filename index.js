@@ -10,8 +10,8 @@ javascript: !(function () {
   document.body.appendChild(canvas);
 
   canvas.style.position = "fixed";
-  // canvas.style.left = "0";
-  // canvas.style.top = "0";
+  canvas.style.left = "0";
+  canvas.style.top = "100";
   canvas.style.zIndex = -1;
 
   var context = canvas.getContext("2d");
@@ -61,7 +61,7 @@ javascript: !(function () {
     }
 
     if (text !== "") {
-      var gap = 5;
+      var gap = 12;
       var fontSize = 120;
 
       textctx.font = fontSize + "px " + font;

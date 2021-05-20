@@ -36,7 +36,7 @@
     resizeCanvas();
 
     var text = '520 我爱你'
-    var fontSize = 120;
+    var fontSize = 80;
     var textHeight = fontSize;
     context.font = fontSize + "px serif";
     context.fillStyle = "#ffffff";
@@ -45,7 +45,7 @@
     var textWidth = context.measureText(text).width;
 
     var imgData = context.getImageData(0, 0, textWidth, textHeight);
-    var gap = 6
+    var gap = 12
     var x = 400
     var y = 200
     for (var h = 0; h < textHeight; h += gap) {
